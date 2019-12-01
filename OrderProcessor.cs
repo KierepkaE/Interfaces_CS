@@ -2,10 +2,10 @@ using System;
 
 namespace interfaces {
   public class OrderProcessor {
-    private readonly ShippingCalculator _shippingCalculator;
+    private readonly IShippingCalculator _shippingCalculator;
 
-    public OrderProcessor () {
-      _shippingCalculator = new ShippingCalculator ();
+    public OrderProcessor (IShippingCalculator shippingCalculator) {
+      _shippingCalculator = shippingCalculator;
     }
 
     public void Process (Order order) {
